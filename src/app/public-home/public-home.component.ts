@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./public-home.component.css']
 })
 export class PublicHomeComponent implements OnInit {
-  
+
   title = 'Aden';
 
   constructor() { }

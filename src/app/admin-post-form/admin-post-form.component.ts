@@ -16,7 +16,7 @@ export class AdminPostFormComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.route.params.subscribe(params => {
       this.id = params['id'];
-      console.log(this.id);
+      // console.log(this.id);
     });
   }
 

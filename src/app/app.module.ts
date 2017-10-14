@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { PublicNavbarComponent } from './public-navbar/public-navbar.component';
 import { PublicHomeComponent } from './public-home/public-home.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
@@ -26,7 +27,10 @@ import { AdminPostViewComponent } from './admin-post-view/admin-post-view.compon
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }  // PathLocationStrategy or HashLocationStrategy
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
