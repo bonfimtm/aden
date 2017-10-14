@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +29,8 @@ import { AdminPostViewComponent } from './admin-post-view/admin-post-view.compon
     AppRoutingModule
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }  // PathLocationStrategy or HashLocationStrategy
+    { provide: LocationStrategy, useClass: HashLocationStrategy },  // PathLocationStrategy or HashLocationStrategy
+    { provide: APP_BASE_HREF, useValue: '!' }
   ],
   bootstrap: [AppComponent]
 })
