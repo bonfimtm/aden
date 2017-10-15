@@ -12,6 +12,7 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AdminPostListComponent } from './admin-post-list/admin-post-list.component';
 import { AdminPostFormComponent } from './admin-post-form/admin-post-form.component';
 import { AdminPostViewComponent } from './admin-post-view/admin-post-view.component';
+import { PublicLoginComponent } from './public-login/public-login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminPostViewComponent } from './admin-post-view/admin-post-view.compon
     AdminNavbarComponent,
     AdminPostListComponent,
     AdminPostFormComponent,
-    AdminPostViewComponent
+    AdminPostViewComponent,
+    PublicLoginComponent
   ],
   imports: [
     BrowserModule,
