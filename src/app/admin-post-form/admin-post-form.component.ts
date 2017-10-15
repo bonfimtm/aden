@@ -8,10 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AdminPostFormComponent implements OnInit, OnDestroy {
 
-  id: string;
   private subscription: any;
+  public id: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.subscription = this.route.params.subscribe(params => {

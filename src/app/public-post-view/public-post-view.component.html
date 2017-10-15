@@ -3,19 +3,21 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1 class="display-3">Welcome to {{title}}!</h1>
+      <h1 class="display-3"></h1>
     </div>
   </div>
   <div class="row" *ngFor="let post of posts | async">
     <div class="col">
-      <a href="#!/post/{{ post.url }}">
+      <article>
         <h3 class="display-4">
           {{ post.title }}
+          <small class="text-muted"></small>
         </h3>
-      </a>
-      <small class="text-muted">{{ post.subtitle }}</small>
-      <p><span [innerHTML]="post.content| slice:0:1000 | br"></span>...</p>
-      <hr>
+        <p class="lead">
+          {{ post.subtitle }}
+        </p>
+        <p [innerHTML]="post.content | br"></p>
+      </article>
     </div>
   </div>
 </div>
