@@ -10,8 +10,8 @@ import { AdminPostFormComponent } from './admin-post-form/admin-post-form.compon
 import { AdminPostViewComponent } from './admin-post-view/admin-post-view.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: PublicHomeComponent },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', component: PublicHomeComponent },
   { path: 'login', component: PublicLoginComponent },
   { path: 'post/:url', component: PublicPostViewComponent },
   { path: 'admin/posts', component: AdminPostListComponent },

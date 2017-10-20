@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { APP_BASE_HREF } from '@angular/common';
+import { PathLocationStrategy, LocationStrategy } from '@angular/common';
+// import { APP_BASE_HREF } from '@angular/common';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -41,8 +41,8 @@ import { BrPipe } from './br.pipe';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy },  // PathLocationStrategy or HashLocationStrategy
-    { provide: APP_BASE_HREF, useValue: '!' },
+    { provide: LocationStrategy, useClass: PathLocationStrategy },  // PathLocationStrategy or HashLocationStrategy
+    // { provide: APP_BASE_HREF, useValue: '!' },
     PostService,
   ],
   bootstrap: [AppComponent],
