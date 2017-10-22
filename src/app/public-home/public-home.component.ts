@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { Post } from '../model';
-import { PostService } from "../post.service";
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-public-home',
@@ -11,7 +11,6 @@ import { PostService } from "../post.service";
 })
 export class PublicHomeComponent implements OnInit {
 
-  public title = 'Aden';
   public posts: Observable<Post[]>;
 
   constructor(private postService: PostService) {

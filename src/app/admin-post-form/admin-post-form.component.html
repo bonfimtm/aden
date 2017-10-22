@@ -1,31 +1,34 @@
 <app-admin-navbar></app-admin-navbar>
 
 <div class="container">
+
   <div class="row mt-2">
     <div class="col">
       <h3 class="display-4">Post</h3>
     </div>
     <div class="col">
-      <a role="button" href="/admin/post/view" class="btn btn-success btn-lg float-right align-middle mt-2">
-          Save
-      </a>
+      <button type="button" class="btn btn-success btn-lg float-right align-middle mt-2" (click)="onSubmit(form)">Save</button>
     </div>
   </div>
 
   <div class="row mt-2">
     <div class="col">
-      <form>
+      <form name="PostForm" #form>
         <div class="form-group">
           <label for="title">Title</label>
-          <input type="text" class="form-control" id="title">
+          <input type="text" class="form-control" id="title" name="Title" required [(ngModel)]="post.title">
         </div>
         <div class="form-group">
           <label for="subtitle">Subtitle</label>
-          <input type="text" class="form-control" id="subtitle">
+          <input type="text" class="form-control" id="subtitle" name="Subtitle" [(ngModel)]="post.subtitle">
+        </div>
+        <div class="form-group">
+          <label for="Headline">Headline</label>
+          <textarea type="text" class="form-control" id="headline" name="Headline" required rows="5" [(ngModel)]="post.headline"></textarea>
         </div>
         <div class="form-group">
           <label for="content">Content</label>
-          <textarea class="form-control" id="content" rows="10"></textarea>
+          <textarea class="form-control" id="content" name="Content" required rows="15" [(ngModel)]="post.content"></textarea>
         </div>
       </form>
     </div>
@@ -34,8 +37,8 @@
   <div class="row mt-2">
     <div class="col">
       <a role="button" href="/admin/posts" class="btn btn-outline-danger btn-lg btn-block">
-            Delete
-        </a>
+        Delete
+      </a>
     </div>
   </div>
 </div>

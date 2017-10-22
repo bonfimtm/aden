@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import * as slug from 'slug/slug.js';
+import { Observable } from 'rxjs/Observable';
+
+import { Post } from '../model';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-admin-post-list',
@@ -8,10 +11,13 @@ import * as slug from 'slug/slug.js';
 })
 export class AdminPostListComponent implements OnInit {
 
-  constructor() { }
+  public posts: Observable<Post[]>;
+
+  constructor(private postService: PostService) {
+    this.posts = postService.findAll();
+  }
 
   ngOnInit() {
-    // console.log(slug('i ♥ unicode'));
   }
 
 }

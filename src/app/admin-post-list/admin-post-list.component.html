@@ -15,11 +15,7 @@
   <div class="row mt-2">
     <div class="col">
       <div class="list-group">
-        <a href="/admin/post/view" class="list-group-item list-group-item-action">Cras justo odio</a>
-        <a href="/admin/post/view" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-        <a href="/admin/post/view" class="list-group-item list-group-item-action">Morbi leo risus</a>
-        <a href="/admin/post/view" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-        <a href="/admin/post/view" class="list-group-item list-group-item-action">Vestibulum at eros</a>
+        <a href="/admin/post/view" class="list-group-item list-group-item-action" *ngFor="let post of posts | async" [text]="post.title"></a>
       </div>
     </div>
   </div>
