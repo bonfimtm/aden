@@ -51,8 +51,7 @@ export class AdminPostFormComponent implements OnInit, OnDestroy {
 
   create() {
     console.log('create post');
-    this.post.url = slug(this.post.title);
-    this.postService.createPost(this.post)
+    this.postService.create(this.post)
       .then(docRef => {
         console.log('Post written with ID: ', docRef.id, docRef);
         this.post = new Post();

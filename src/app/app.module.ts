@@ -20,6 +20,7 @@ import { AdminPostViewComponent } from './admin-post-view/admin-post-view.compon
 import { PublicLoginComponent } from './public-login/public-login.component';
 import { PostService } from './post.service';
 import { BrPipe } from './br.pipe';
+import { LoadingPipe } from './loading.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BrPipe } from './br.pipe';
     PublicLoginComponent,
     BrPipe,
     PublicPostViewComponent,
+    LoadingPipe,
   ],
   imports: [
     BrowserModule,

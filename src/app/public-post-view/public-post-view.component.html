@@ -13,9 +13,14 @@
           {{ post.title }}
           <small class="text-muted"></small>
         </h3>
-        <p class="lead">
-          {{ post.subtitle }}
+        <p>
+          <i class="fa fa-fw fa-calendar"></i>
+          <small [innerText]="post.createdAt | date:'medium'"></small>
+          &middot;
+          <i class="fa fa-fw fa-refresh"></i>
+          <small [innerText]="post.updatedAt | date:'medium'"></small>
         </p>
+        <p class="lead" *ngIf="post.subtitle" [innerText]="post.subtitle"></p>
         <p [innerHTML]="post.content | br"></p>
       </article>
     </div>

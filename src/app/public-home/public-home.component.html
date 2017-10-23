@@ -4,12 +4,15 @@
   <div class="row" *ngFor="let post of posts | async">
     <div class="col">
       <a href="/post/{{ post.url }}">
-        <h1 class="display-4">
-          {{ post.title }}
-        </h1>
+        <h1 class="display-4" [innerText]="post.title"></h1>
       </a>
-      <p class="lead">{{ post.subtitle }}</p>
-      <p><span [innerHTML]="post.headline | br"></span></p>
+      <p>
+        <small [innerText]="post.updatedAt | date:'medium'"></small>
+      </p>
+      <p class="lead" *ngIf="post.subtitle" [innerText]="post.subtitle"></p>
+      <p>
+        <span [innerText]="post.headline | br"></span>
+      </p>
       <hr>
     </div>
   </div>

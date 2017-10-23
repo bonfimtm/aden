@@ -15,8 +15,12 @@
   <div class="row mt-2">
     <div class="col">
       <div class="list-group">
-        <a href="/admin/post/view" class="list-group-item list-group-item-action" *ngFor="let post of posts | async" [text]="post.title"></a>
+        <a href="/admin/post/edit/{{ post.id }}" class="list-group-item list-group-item-action" *ngFor="let post of posts | async"
+          [text]="post.title"></a>
       </div>
+      <span *ngIf="!(posts | async)">
+        <i class="fa fa-refresh fa-spin fa-2x" aria-hidden="true"></i>
+      </span>
     </div>
   </div>
 </div>
