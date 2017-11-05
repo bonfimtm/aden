@@ -1,0 +1,14 @@
+@import '~bootstrap/scss/functions',
+'~bootstrap/scss/variables',
+'~bootstrap/scss/mixins',
+'~bootstrap/scss/print',
+'~bootstrap/scss/reboot',
+'~bootstrap/scss/type';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}

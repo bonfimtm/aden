@@ -10,15 +10,20 @@ import { AdminPostFormComponent } from './admin-post-form/admin-post-form.compon
 import { AdminPostViewComponent } from './admin-post-view/admin-post-view.component';
 
 const routes: Routes = [
+
+  /* Redirect */
   { path: '', redirectTo: '/', pathMatch: 'full' },
+
+  /* Public */
   { path: '', component: PublicHomeComponent },
   { path: 'login', component: PublicLoginComponent },
   { path: 'post/:url', component: PublicPostViewComponent },
+
+  /* Admin */
   { path: 'admin/posts', component: AdminPostListComponent },
-  { path: 'admin/post/view', component: AdminPostViewComponent },
+  { path: 'admin/new-post', component: AdminPostFormComponent },
+  { path: 'admin/post/edit/:id', component: AdminPostFormComponent },
   { path: 'admin/post/view/:id', component: AdminPostViewComponent },
-  { path: 'admin/post', component: AdminPostFormComponent },
-  { path: 'admin/post/:id', component: AdminPostFormComponent },
 ];
 
 @NgModule({

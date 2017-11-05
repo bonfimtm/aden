@@ -1,10 +1,10 @@
 const functions = require('firebase-functions');
 const slug = require('slug');
 
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   response.send('Welcome to Aden Castle Town!');
-//   console.log('Welcome to Aden');
-// });
+exports.welcomeMessage = functions.https.onRequest((request, response) => {
+  console.log('welcomeMessage');
+  response.send('Welcome to Aden Castle Town!');
+});
 
 exports.createPost = functions.firestore
   .document('posts/{id}')
@@ -20,7 +20,7 @@ exports.createPost = functions.firestore
 
     // Then return a promise of a set operation to update the count
     return event.data.ref.set({
-      url: slug(data.title.toLowerCase),
+      url: slug(data.title.toLowerCase()),
       createdAt: currentTime,
       updatedAt: currentTime,
     }, {

@@ -15,6 +15,13 @@ export class Post implements Entity {
     url: string;
 }
 
+export function setId<T extends Entity>(action) {
+    console.log(action);
+    let data = action.payload.data() as T;
+    const id = action.payload.id;
+    data.id = id;
+    return data;
+}
 
 export function mapId<T extends Entity>(actions) {
     return actions.map(a => {

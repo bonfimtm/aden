@@ -1,18 +1,26 @@
 <app-public-navbar></app-public-navbar>
 
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <h1 class="display-3"></h1>
+
+  <!-- Loading -->
+  <div class="row mt-3">
+    <div *ngIf="!(posts | async)" class="col">
+      <i class="fa fa-refresh fa-spin fa-2x" aria-hidden="true"></i>
     </div>
   </div>
-  <div class="row" *ngFor="let post of posts | async">
+
+  <!-- Post -->
+  <div class="row mt-1" *ngFor="let post of posts | async">
     <div class="col">
+
       <article>
-        <h3 class="display-4">
-          {{ post.title }}
-          <small class="text-muted"></small>
-        </h3>
+        <!-- Title -->
+        <h1 [innerText]="post.title"></h1>
+
+        <!-- Subtitle -->
+        <p class="lead" *ngIf="post.subtitle" [innerText]="post.subtitle"></p>
+
+        <!-- Date -->
         <p>
           <i class="fa fa-fw fa-calendar"></i>
           <small [innerText]="post.createdAt | date:'medium'"></small>
@@ -20,9 +28,11 @@
           <i class="fa fa-fw fa-refresh"></i>
           <small [innerText]="post.updatedAt | date:'medium'"></small>
         </p>
-        <p class="lead" *ngIf="post.subtitle" [innerText]="post.subtitle"></p>
+
+        <!-- Content -->
         <p [innerHTML]="post.content | br"></p>
       </article>
+
     </div>
   </div>
 </div>

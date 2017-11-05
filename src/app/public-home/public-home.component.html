@@ -1,18 +1,32 @@
 <app-public-navbar></app-public-navbar>
 
 <div class="container">
-  <div class="row" *ngFor="let post of posts | async">
+
+  <!-- Loading -->
+  <div class="row mt-3">
+    <div *ngIf="!(posts | async)" class="col">
+      <i class="fa fa-refresh fa-spin fa-2x" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <!-- Post -->
+  <div class="row mt-3" *ngFor="let post of posts | async">
     <div class="col">
+
+      <!-- Title -->
       <a href="/post/{{ post.url }}">
-        <h1 class="display-4" [innerText]="post.title"></h1>
+        <h1 [innerText]="post.title"></h1>
       </a>
-      <p>
-        <small [innerText]="post.updatedAt | date:'medium'"></small>
-      </p>
+
+      <!-- Date -->
+      <p [innerText]="post.updatedAt | date:'medium'"></p>
+
+      <!-- Subtitle -->
       <p class="lead" *ngIf="post.subtitle" [innerText]="post.subtitle"></p>
-      <p>
-        <span [innerText]="post.headline | br"></span>
-      </p>
+
+      <!-- Headline -->
+      <p [innerText]="post.headline | br"></p>
+
       <hr>
     </div>
   </div>
