@@ -17,7 +17,7 @@ export class Post implements Entity {
 
 export function setId<T extends Entity>(action) {
     console.log(action);
-    let data = action.payload.data() as T;
+    const data = action.payload.data() as T;
     const id = action.payload.id;
     data.id = id;
     return data;
@@ -25,7 +25,7 @@ export function setId<T extends Entity>(action) {
 
 export function mapId<T extends Entity>(actions) {
     return actions.map(a => {
-        let data = a.payload.doc.data() as T;
+        const data = a.payload.doc.data() as T;
         const id = a.payload.doc.id;
         data.id = id;
         return data;

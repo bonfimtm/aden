@@ -8,6 +8,7 @@ import { PublicPostViewComponent } from './public-post-view/public-post-view.com
 import { AdminPostListComponent } from './admin-post-list/admin-post-list.component';
 import { AdminPostFormComponent } from './admin-post-form/admin-post-form.component';
 import { AdminPostViewComponent } from './admin-post-view/admin-post-view.component';
+import { AdminPostEditComponent } from './admin-post-edit/admin-post-edit.component';
 
 const routes: Routes = [
 
@@ -22,7 +23,7 @@ const routes: Routes = [
   /* Admin */
   { path: 'admin/posts', component: AdminPostListComponent },
   { path: 'admin/new-post', component: AdminPostFormComponent },
-  { path: 'admin/post/edit/:id', component: AdminPostFormComponent },
+  { path: 'admin/post/edit/:id', component: AdminPostEditComponent },
   { path: 'admin/post/view/:id', component: AdminPostViewComponent },
 ];
 

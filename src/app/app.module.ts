@@ -21,6 +21,9 @@ import { PublicLoginComponent } from './public-login/public-login.component';
 import { PostService } from './post.service';
 import { BrPipe } from './br.pipe';
 import { LoadingPipe } from './loading.pipe';
+import { AdminPostEditComponent } from './admin-post-edit/admin-post-edit.component';
+import { Alert } from 'selenium-webdriver';
+import { AlertService } from './alert.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { LoadingPipe } from './loading.pipe';
     BrPipe,
     PublicPostViewComponent,
     LoadingPipe,
+    AdminPostEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ import { LoadingPipe } from './loading.pipe';
     { provide: LocationStrategy, useClass: PathLocationStrategy },  // PathLocationStrategy or HashLocationStrategy
     // { provide: APP_BASE_HREF, useValue: '!' },
     PostService,
+    AlertService,
   ],
   bootstrap: [AppComponent],
 })

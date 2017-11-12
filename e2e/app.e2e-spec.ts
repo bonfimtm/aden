@@ -1,14 +1,20 @@
+import { browser } from 'protractor';
 import { AppPage } from './app.po';
 
-describe('aden App', () => {
+describe('Aden App', () => {
   let page: AppPage;
+
+  beforeAll(() => {
+    browser.waitForAngularEnabled(false);
+  });
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display the home page', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to Aden!');
+    expect(page.getNavbarBrand()).toEqual('Aden');
   });
+
 });

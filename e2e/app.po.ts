@@ -3,10 +3,12 @@ import { browser, by, element } from 'protractor';
 export class AppPage {
 
   navigateTo() {
-    return browser.get('/');
+    const nav = browser.get('/');
+    browser.sleep(2000);
+    return nav;
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getNavbarBrand() {
+    return element(by.css('.navbar-brand')).getText();
   }
 }

@@ -31,11 +31,10 @@ export class PostService {
   }
 
   findById(id: string): Observable<Post> {
-    let doc = this.db.doc<Post>('posts/' + id);
+    const doc = this.db.doc<Post>('posts/' + id);
     return doc.snapshotChanges().map(action => {
-      let data = action.payload.data() as Post;
-      const id = action.payload.id;
-      data.id = id;
+      const data = action.payload.data() as Post;
+      data.id = action.payload.id;
       return data;
     });
   }
