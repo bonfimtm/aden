@@ -11,7 +11,7 @@
 
     <!-- Save -->
     <div class="col">
-      <button type="button" class="btn btn-success btn-lg float-right align-middle mt-2" (click)="onSubmit(form)">
+      <button id="buttonSave" type="button" class="btn btn-success btn-lg float-right align-middle mt-2" (click)="onSubmit(form)">
         <i class="fa fa-fw" aria-hidden="true" [ngClass]="{'fa-floppy-o': !saving, 'fa-refresh fa-spin': saving}"></i>
         Save
       </button>
