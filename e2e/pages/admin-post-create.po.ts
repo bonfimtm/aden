@@ -31,5 +31,5 @@ export class AdminPostCreatePage {
     getDialogMessage() {
         return element(by.css('.swal-text'));
     }
-    
+
 }

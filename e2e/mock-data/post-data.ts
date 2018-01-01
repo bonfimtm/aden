@@ -25,19 +25,19 @@ export const postTwo = {
         Two hours later, soldier overran the headquarters of the ZBC, Zimbabwe’s state broadcaster and a principal Mugabe mouthpiece and ordered staff to leave.
         Several ZBC workers were reportedly manhandled according to two members of staff and a human rights activist.
         Shortly afterwards, three explosions rocked the centre of the southern African nation’s capital, according to witnesses.
-        
+
         Arrests
 
         The military detained Finance Minister Ignatius Chombo on Wednesday, according to government sources.
         Chombo was a leading member of the so-called ‘G40’ faction of the ruling ZANU-PF party, led by Mugabe’s wife Grace.
         It has been vying to succeed Mugabe.
-        
+
         Advice for those in Zimbabwe
-        
+
         The US and the UK are advising their citizens in Harare to stay indoors because of “political uncertainty.”
         “US citizens in Zimbabwe are encouraged to shelter in place until further notice,” the US statement said.
         The British Foreign and Commonwealth Office statement told “nationals currently in Harare to remain safely at home or in their accomodation until the situation becomes clearer.”
-        
+
         The context
 
         Zimbabwe has been on edge since Monday when Chiwenga, Commander of the Zimbabwe Defence Forces, said he was prepared to “step in” to end a purge of supporters of the sacked vice-president, Emmerson Mnangagwa.
@@ -57,16 +57,16 @@ export const postThree = {
         While some senators argued that the “military does not blindly follow orders,” including those of a military nature.
         Another said: “No one human being should have the power to unilaterally unleash the most destructive forces ever devised by humankind.”
         Who holds the power to launch nuclear attacks in other countries?
-        
+
         Russia
-        
+
         In Russia, Putin can decide to use the country’s nuclear arsenal.
         Little information exists on specific details of the country’s nuclear weapons programme, but open sources say Putin carries a “Cheget” (nuclear briefcase) with him, weighing nearly 11 kg along with the Minister of Defense and the Chief of the General Staff.
         In the event of a nuclear attack in the country, the three Cheget would alert their owners simultaneously.
         They are connected to a communications system code-named “Kavkaz” which allows communication between senior government officials if they needed to make a decision whether to use nuclear weapons.
         Russia also has a backup system in place called “Perimeter,” known in the US and Western Europe as the “Dead Hand”, which means a retaliatory strike with the full power of the Russian Strategic Missile Forces would be provided in the event that Chegetov carriers and command posts were disabled.
-        
+
         North Korea
-        
+
         Perhaps unsurprisingly, little is known about North Korea’s nuclear launch procedure, but it might be assumed that Kim Jong-un holds the power to press the big red button.`
 };

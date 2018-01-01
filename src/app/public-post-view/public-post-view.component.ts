@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { Post } from '../model';
-import { PostService } from '../post.service';
+import { Post } from '../app-model';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-public-post-view',

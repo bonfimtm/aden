@@ -18,11 +18,12 @@ import { AdminPostListComponent } from './admin-post-list/admin-post-list.compon
 import { AdminPostFormComponent } from './admin-post-form/admin-post-form.component';
 import { AdminPostViewComponent } from './admin-post-view/admin-post-view.component';
 import { PublicLoginComponent } from './public-login/public-login.component';
-import { PostService } from './post.service';
-import { BrPipe } from './br.pipe';
+import { PostService } from './services/post.service';
+import { BrPipe } from './pipes/br.pipe';
 import { AdminPostEditComponent } from './admin-post-edit/admin-post-edit.component';
 import { Alert } from 'selenium-webdriver';
-import { AlertService } from './alert.service';
+import { AlertService } from './services/alert.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { AlertService } from './alert.service';
   providers: [
     { provide: LocationStrategy, useClass: PathLocationStrategy },  // PathLocationStrategy or HashLocationStrategy
     // { provide: APP_BASE_HREF, useValue: '!' },
+    AuthService,
     PostService,
     AlertService,
   ],

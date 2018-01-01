@@ -2,9 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Post } from '../model';
-import { PostService } from '../post.service';
-import { AlertService } from '../alert.service';
+import { Post } from '../app-model';
+import { PostService } from '../services/post.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-admin-post-edit',

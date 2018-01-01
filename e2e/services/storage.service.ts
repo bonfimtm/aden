@@ -1,11 +1,11 @@
-import * as admin from "firebase-admin";
-import { CollectionReference, DocumentSnapshot, QuerySnapshot, WriteResult } from "@google-cloud/firestore";
+import * as admin from 'firebase-admin';
+import { CollectionReference, DocumentSnapshot, QuerySnapshot, WriteResult } from '@google-cloud/firestore';
 
-var serviceAccount = require("../../../aden-32b68-firebase-adminsdk.json");
+const serviceAccount = require('../../../aden-32b68-firebase-adminsdk.json');
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://aden-32b68.firebaseio.com"
+    databaseURL: 'https://aden-32b68.firebaseio.com'
 });
 
 export class PostService {
@@ -25,7 +25,7 @@ export class PostService {
     findAll(): Promise<QuerySnapshot> {
         return this.postsRef.get();
     }
-    
+
     findByTitle(title: string) {
         return this.postsRef.where('title', '==', title).get();
     }
@@ -36,8 +36,8 @@ export class PostService {
 }
 
 
-(function() {
-    const service = new PostService()
+function playGround() {
+    const service = new PostService();
     service.findAll()
         .then(snapshot => {
             console.log(snapshot.size);
@@ -49,4 +49,4 @@ export class PostService {
         .catch(err => {
             console.log('Error getting documents', err);
         });
-});
+}

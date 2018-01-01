@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 
-import { Post, setId, mapId } from './model';
+import { Post, setId, mapId } from '../app-model';
 
 @Injectable()
 export class PostService {

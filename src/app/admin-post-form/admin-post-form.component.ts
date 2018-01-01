@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { Post } from '../model';
-import { PostService } from '../post.service';
-import { AlertService } from '../alert.service';
+import { Post } from '../app-model';
+import { PostService } from '../services/post.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-admin-post-form',
@@ -44,7 +44,7 @@ export class AdminPostFormComponent implements OnInit, OnDestroy {
       .catch(error => {
         console.error('Error adding post: ', error);
         this.saving = false;
-        this.alert.info('Something went wrong ☹️');
+        this.alert.error('Something went wrong ☹️');
       });
   }
 
