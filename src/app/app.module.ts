@@ -20,7 +20,6 @@ import { AdminPostViewComponent } from './admin-post-view/admin-post-view.compon
 import { PublicLoginComponent } from './public-login/public-login.component';
 import { PostService } from './post.service';
 import { BrPipe } from './br.pipe';
-import { LoadingPipe } from './loading.pipe';
 import { AdminPostEditComponent } from './admin-post-edit/admin-post-edit.component';
 import { Alert } from 'selenium-webdriver';
 import { AlertService } from './alert.service';
@@ -37,7 +36,6 @@ import { AlertService } from './alert.service';
     PublicLoginComponent,
     BrPipe,
     PublicPostViewComponent,
-    LoadingPipe,
     AdminPostEditComponent,
   ],
   imports: [

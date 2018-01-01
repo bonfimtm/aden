@@ -1,5 +1,5 @@
 import { browser } from 'protractor';
-import { AppPage } from './app.po';
+import { AppPage } from '../pages/app.po';
 
 describe('Aden App', () => {
   let page: AppPage;

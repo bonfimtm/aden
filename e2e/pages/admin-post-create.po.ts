@@ -8,20 +8,20 @@ export class AdminPostCreatePage {
         return nav;
     }
 
-    setTitle(keys: string | number) {
-        return element(by.css('#title')).sendKeys(keys);
+    getTitle() {
+        return element(by.css('#title'));
     }
 
-    setSubtitle(keys: string | number) {
-        return element(by.css('#subtitle')).sendKeys(keys);
+    getSubtitle() {
+        return element(by.css('#subtitle'));
     }
 
-    setHeadline(keys: string | number) {
-        return element(by.css('#headline')).sendKeys(keys);
+    getHeadline() {
+        return element(by.css('#headline'));
     }
 
-    setContent(keys: string | number) {
-        return element(by.css('#content')).sendKeys(keys);
+    getContent() {
+        return element(by.css('#content'));
     }
 
     getSaveButton() {
