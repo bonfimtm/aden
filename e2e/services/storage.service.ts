@@ -30,6 +30,10 @@ export class PostService {
         return this.postsRef.where('title', '==', title).get();
     }
 
+    findByUrl(url: string) {
+        return this.postsRef.where('url', '==', url).get();
+    }
+
     deleteById(id: string): Promise<WriteResult> {
         return this.postsRef.doc(id).delete();
     }
