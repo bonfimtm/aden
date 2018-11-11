@@ -1,7 +1,7 @@
 import * as admin from 'firebase-admin';
 import { CollectionReference, DocumentSnapshot, QuerySnapshot, WriteResult } from '@google-cloud/firestore';
 
-const serviceAccount = require('../../../aden-32b68-firebase-adminsdk.json');
+const serviceAccount = require(process.env.FIREBASE_CREDENTIAL_PATH);
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -37,20 +37,4 @@ export class PostService {
     deleteById(id: string): Promise<WriteResult> {
         return this.postsRef.doc(id).delete();
     }
-}
-
-
-function playGround() {
-    const service = new PostService();
-    service.findAll()
-        .then(snapshot => {
-            console.log(snapshot.size);
-            snapshot.forEach(doc => {
-                console.log(doc.id);
-                // console.log(doc.id, doc.data());
-            });
-        })
-        .catch(err => {
-            console.log('Error getting documents', err);
-        });
 }

@@ -3,9 +3,7 @@ import { browser, by, element } from 'protractor';
 export class AppPage {
 
   navigateTo() {
-    const nav = browser.get('/');
-    browser.sleep(2000);
-    return nav;
+    return browser.get('/');
   }
 
   getNavbarBrand() {

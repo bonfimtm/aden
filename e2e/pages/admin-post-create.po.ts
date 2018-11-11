@@ -10,9 +10,7 @@ export interface PostFormInterface {
 export class AdminPostCreatePage {
 
     navigateTo() {
-        const nav = browser.get('/admin/new-post');
-        browser.sleep(2000);
-        return nav;
+        return browser.get('/admin/new-post');
     }
 
     getTitle() {

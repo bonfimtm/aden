@@ -12,8 +12,8 @@ describe('Aden App', () => {
     page = new AppPage();
   });
 
-  it('should display the home page', () => {
-    page.navigateTo();
+  it('should display the home page', async () => {
+    await page.navigateTo();
     expect(page.getNavbarBrand()).toEqual('Aden');
   });
 
