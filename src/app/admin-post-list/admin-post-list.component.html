@@ -6,7 +6,7 @@
       <h3 class="display-4">Posts</h3>
     </div>
     <div class="col">
-      <a role="button" href="/admin/new-post" class="btn btn-secondary btn-lg float-right align-middle mt-2">
+      <a role="button" routerLink="/admin/new-post" class="btn btn-secondary btn-lg float-right align-middle mt-2">
         <i class="fa fa-plus" aria-hidden="true"></i>
       </a>
     </div>
@@ -15,7 +15,7 @@
   <div class="row mt-2">
     <div class="col">
       <div id="listPost" class="list-group">
-        <a href="/admin/post/edit/{{ post.id }}" class="list-group-item list-group-item-action" *ngFor="let post of posts | async"
+        <a routerLink="/admin/post/edit/{{ post.id }}" class="list-group-item list-group-item-action" *ngFor="let post of posts | async"
           [text]="post.title"></a>
       </div>
       <span *ngIf="!(posts | async)">
