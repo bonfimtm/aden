@@ -9,22 +9,22 @@ export class AlertService {
 
   info(message) {
     console.log(message);
-    swal('Info', message, 'info');
+    return swal('Info', message, 'info');
   }
 
   success(message) {
     console.log(message);
-    swal('Success', message, 'success');
+    return swal('Success', message, 'success');
   }
 
   warning(message) {
     console.warn(message);
-    swal('Warning', message, 'warning');
+    return swal('Warning', message, 'warning');
   }
 
   error(message) {
     console.error(message);
-    swal('Error', message, 'error');
+    return swal('Error', message, 'error');
   }
 
 }
