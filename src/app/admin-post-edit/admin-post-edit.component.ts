@@ -17,6 +17,7 @@ export class AdminPostEditComponent implements OnInit, OnDestroy {
   public post: Post;
   public failed = false;
   public saving = false;
+  public deleting = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private postService: PostService, private alert: AlertService) {
     this.subscription = this.route.params.subscribe(params => {
@@ -69,14 +70,17 @@ export class AdminPostEditComponent implements OnInit, OnDestroy {
 
   delete() {
     console.log('delete post');
-    this.router.navigate(['admin/posts']);
+    this.deleting = true;
     this.postService.delete(this.post)
       .then(success => {
         console.log('Post deleted: ', success);
+        this.deleting = false;
         this.alert.info('Post deleted 👍🏻');
+        this.router.navigate(['admin/posts']);
       })
       .catch(error => {
         console.error('Error deleting post: ', error);
+        this.deleting = false;
         this.alert.error('Something went wrong 😩');
       });
   }

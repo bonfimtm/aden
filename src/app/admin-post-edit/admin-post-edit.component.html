@@ -64,7 +64,14 @@
   <!-- Delete -->
   <div class="row mb-4" *ngIf="ready">
     <div class="col">
-      <button type="button" class="btn btn-outline-danger btn-lg btn-block" (click)="delete()">Delete</button>
+      <button type="button" class="btn btn-outline-danger btn-lg btn-block" (click)="delete()">
+        <i class="fa fa-fw" aria-hidden="true"
+            [class.fa-trash-o]="!deleting"
+            [class.fa-refresh]="deleting"
+            [class.fa-spin]="deleting">
+        </i>
+        Delete
+      </button>
     </div>
   </div>
 
