@@ -50,13 +50,13 @@ export const postTwo = {
 
         The context
 
-        Zimbabwe has been on edge since Monday when Chiwenga, Commander of the Zimbabwe Defence Forces, said he was prepared to “step in” 
-        to end a purge of supporters of the sacked vice-president, Emmerson Mnangagwa.
-        Mnangagwa, a former security chief nicknamed “The Crocodile” was favourite to succeed his life-long political patron but was 
-        ousted a week ago to pave the way for Mugabe’s 52-year-old wife Grace to succeed him.
+        Zimbabwe has been on edge since Monday when Chiwenga, Commander of the Zimbabwe Defence Forces, said he was prepared to “step in”
+         to end a purge of supporters of the sacked vice-president, Emmerson Mnangagwa.
+        Mnangagwa, a former security chief nicknamed “The Crocodile” was favourite to succeed his life-long political patron but was
+         ousted a week ago to pave the way for Mugabe’s 52-year-old wife Grace to succeed him.
         The previous day, Chiwenga had made clear the army’s refusal to accept the removal of Mnangagwa and the presumed accession of Grace.
-        According to reports, Mnangagwa had been planning to revitalise the economy by bringing back thousands of white farmers kicked off 
-        their land nearly two decades ago.
+        According to reports, Mnangagwa had been planning to revitalise the economy by bringing back thousands of white farmers kicked off
+         their land nearly two decades ago.
         He reportedly also wanted to patch up relations with international organisations like the World Bank and IMF.`
 };
 
@@ -78,8 +78,8 @@ export const postThree = {
 
         `In Russia, Putin can decide to use the country’s nuclear arsenal.` +
         `Little information exists on specific details of the country’s nuclear weapons programme, but open sources say ` +
-        `Putin carries a “Cheget” (nuclear briefcase) with him, weighing nearly 11 kg along with the Minister of Defense and 
-        the Chief of the General Staff.` +
+        `Putin carries a “Cheget” (nuclear briefcase) with him, weighing nearly 11 kg along with the Minister of Defense and
+         the Chief of the General Staff.` +
         `In the event of a nuclear attack in the country, the three Cheget would alert their owners simultaneously.` +
         `They are connected to a communications system code-named “Kavkaz” which allows communication between senior ` +
         `government officials if they needed to make a decision whether to use nuclear weapons.` +
