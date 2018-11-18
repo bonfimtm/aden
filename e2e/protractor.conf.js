@@ -18,10 +18,8 @@ exports.config = {
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
+    defaultTimeoutInterval: 60000,
     print: function () {}
-  },
-  jasmine: {
-    DEFAULT_TIMEOUT_INTERVAL: 30000,
   },
   onPrepare() {
     require('ts-node').register({
