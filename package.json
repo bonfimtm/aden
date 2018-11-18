@@ -10,7 +10,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cleanall": "rm -rf node_modules dist"
+    "cleanall": "rm -rf node_modules dist",
+    "predeploy": "npm run build",
+    "deploy": "firebase deploy"
   },
   "private": false,
   "dependencies": {
