@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
-import { Observable } from 'rxjs/Observable';
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { Post, setId, mapId } from '../app-model';
+import { Post, mapId } from '../app-model';
 
 @Injectable()
 export class PostService {
@@ -27,16 +28,18 @@ export class PostService {
   }
 
   findAll(): Observable<Post[]> {
-    return this.postCollection.snapshotChanges().map(mapId);
+    return this.postCollection.snapshotChanges().pipe(map(mapId));
   }
 
   findById(id: string): Observable<Post> {
     const doc = this.db.doc<Post>('posts/' + id);
-    return doc.snapshotChanges().map(action => {
-      const data = action.payload.data() as Post;
-      data.id = action.payload.id;
-      return data;
-    });
+    return doc.snapshotChanges().pipe(
+      map(action => {
+        const data = action.payload.data() as Post;
+        data.id = action.payload.id;
+        return data;
+      })
+    );
   }
 
   findByUrl(url: string): Observable<Post[]> {
