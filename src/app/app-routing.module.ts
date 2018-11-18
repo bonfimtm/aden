@@ -9,6 +9,7 @@ import { AdminPostListComponent } from './admin-post-list/admin-post-list.compon
 import { AdminPostFormComponent } from './admin-post-form/admin-post-form.component';
 import { AdminPostViewComponent } from './admin-post-view/admin-post-view.component';
 import { AdminPostEditComponent } from './admin-post-edit/admin-post-edit.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
 
@@ -21,10 +22,22 @@ const routes: Routes = [
   { path: 'post/:url', component: PublicPostViewComponent },
 
   /* Admin */
-  { path: 'admin/posts', component: AdminPostListComponent },
-  { path: 'admin/new-post', component: AdminPostFormComponent },
-  { path: 'admin/post/edit/:id', component: AdminPostEditComponent },
-  { path: 'admin/post/view/:id', component: AdminPostViewComponent },
+  {
+    path: 'admin',
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', component: AdminPostListComponent },
+      { path: 'posts', component: AdminPostListComponent },
+      { path: 'new-post', component: AdminPostFormComponent },
+      {
+        path: 'post',
+        children: [
+          { path: 'edit/:id', component: AdminPostEditComponent },
+          { path: 'view/:id', component: AdminPostViewComponent },
+        ],
+      },
+    ],
+  },
 ];
 
 @NgModule({

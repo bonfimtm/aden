@@ -10,15 +10,20 @@
 
         <div class="form-group">
           <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email" name="InputEmail" placeholder="Enter email" required [(ngModel)]="email" #emailModel="ngModel">
+          <input type="email" class="form-control" id="email" name="InputEmail" placeholder="Enter email" required
+            [(ngModel)]="email" #emailModel="ngModel">
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="InputPassword" placeholder="Enter password" required [(ngModel)]="password" #passwordModel="ngModel">
+          <input type="password" class="form-control" id="password" name="InputPassword" placeholder="Enter password"
+            required [(ngModel)]="password" #passwordModel="ngModel">
         </div>
 
-        <input type="submit" class="btn btn-primary" value="Sign in" (click)="onSubmit(form)" [disabled]="emailModel.invalid || passwordModel.invalid">
+        <button id="login" type="submit" class="btn btn-primary" (click)="onSubmit(form)" [disabled]="emailModel.invalid || passwordModel.invalid">
+          <i class="fa fa-fw" aria-hidden="true" [ngClass]="{'fa-sign-in': !buttonSignInIsLoading, 'fa-refresh fa-spin': buttonSignInIsLoading}"></i>
+          Log in
+        </button>
 
       </form>
 

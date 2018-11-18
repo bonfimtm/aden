@@ -14,6 +14,7 @@ export class PublicLoginComponent implements OnInit {
 
   email: string;
   password: string;
+  buttonSignInIsLoading = false;
 
   constructor(private auth: AuthService, private router: Router, private alert: AlertService) {
   }
@@ -22,15 +23,23 @@ export class PublicLoginComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log('form', form);
+
+    this.buttonSignInIsLoading = true;
+    console.log('User sign in:', this.email);
+
     this.auth.login(this.email, this.password)
+
       .then(_ => {
-        console.log('signed in');
-        this.router.navigate(['admin/posts']);
+        this.email = null;
+        this.password = null;
+        this.buttonSignInIsLoading = false;
+        console.log('Logged in');
       })
+
       .catch(error => {
-        console.log('error signing in', error);
-        this.alert.error(error.message + '😕');
+        this.buttonSignInIsLoading = false;
+        console.log('Error when logging in', error);
+        this.alert.error('😢');
       });
   }
 
