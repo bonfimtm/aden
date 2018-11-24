@@ -1,12 +1,5 @@
 import { browser, by, element } from 'protractor';
 
-export interface PostFormInterface {
-    title: string;
-    subtitle: string;
-    headline: string;
-    content: string;
-}
-
 export class AdminPostCreatePage {
 
     navigateTo() {
@@ -37,4 +30,11 @@ export class AdminPostCreatePage {
         return element(by.css('.swal-text'));
     }
 
+}
+
+export interface PostFormInterface {
+    title: string;
+    subtitle: string;
+    headline: string;
+    content: string;
 }

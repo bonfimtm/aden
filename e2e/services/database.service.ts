@@ -10,12 +10,20 @@ admin.initializeApp({
 
 export class PostService {
 
+    private static instance: PostService;
     private db: admin.firestore.Firestore;
     private postsRef: CollectionReference;
 
-    constructor() {
+    private constructor() {
         this.db = admin.firestore();
         this.postsRef = this.db.collection('posts');
+    }
+
+    static getInstance(): PostService {
+        if (!PostService.instance) {
+            PostService.instance = new PostService();
+        }
+        return PostService.instance;
     }
 
     findById(id: string): Promise<DocumentSnapshot> {

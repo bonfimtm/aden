@@ -1,76 +1,75 @@
 import { browser } from 'protractor';
 import { AdminPostCreatePage, PostFormInterface } from '../pages/admin-post-create.po';
 
-// TODO Test post URL generation
-// import * as slug from 'slug';
+import * as slug from 'slug';
 
 import { generateUUID } from '../services/uuid-generator';
-import { postOne, postTwo, postThree } from '../mock-data/post-data';
 import { PostService } from '../services/database.service';
+import { login, logout } from './login.e2e-spec';
 
 describe('Admin/Post/Create', () => {
 
-    let service: PostService;
-    let page: AdminPostCreatePage;
-
-    beforeAll(() => {
+    beforeAll(async () => {
         browser.waitForAngularEnabled(false);
-        service = new PostService();
+        await login();
     });
 
-    beforeEach(() => {
-        page = new AdminPostCreatePage();
-    });
+    it('should create a post', () => createPost());
 
-    it('should create post one', () => createPost(postOne));
-    it('should create post two', () => createPost(postTwo));
-    it('should create post three', () => createPost(postThree));
-
-    async function createPost(post: PostFormInterface) {
-
-        const uuid = generateUUID();
-        const postTitle = `${post.title} ${uuid}`;
-
-        console.log('Creating post:', postTitle);
-
-        // Navigate to page
-        await page.navigateTo();
-
-        // Fill out form
-        await page.getTitle().sendKeys(postTitle);
-        await page.getSubtitle().sendKeys(post.subtitle);
-        await page.getHeadline().sendKeys(post.headline);
-        await page.getContent().sendKeys(post.content);
-
-        // Submit form
-        await page.getSaveButton().click();
-
-        await browser.sleep(10000);
-
-        console.log('Asserting post creation');
-
-        service.findByTitle(postTitle)
-            .then(snapshot => {
-
-                // One post shall be created
-                expect(snapshot.size).toEqual(1);
-
-                snapshot.forEach(doc => {
-
-                    // Debug
-                    console.log(doc.id);
-
-                    // TODO An URL shall be generated for the post
-                    // const postUrl = slug(postTitle.toLowerCase());
-                    // expect(doc.data().url).toEqual(postUrl);
-
-                    // Cleanup
-                    service.deleteById(doc.id);
-                });
-            })
-            .catch(err => {
-                console.error('Error getting documents', err);
-            });
-    }
+    afterAll(() => logout());
 
 });
+
+export async function createPost(post?: PostFormInterface) {
+
+    const page = new AdminPostCreatePage();
+
+    if (post === undefined) {
+        post = require('../mock-data/post-data').postAirbusDeal;
+    }
+
+    const uuid = generateUUID();
+    const postTitle = `${post.title} ${uuid}`;
+
+    console.log('Creating post:', postTitle);
+
+    // Navigate to page
+    await page.navigateTo();
+
+    await browser.sleep(2000);
+
+    // Fill out form
+    await page.getTitle().sendKeys(postTitle);
+    await page.getSubtitle().sendKeys(post.subtitle);
+    await page.getHeadline().sendKeys(post.headline);
+    await page.getContent().sendKeys(post.content);
+
+    // Submit form
+    await page.getSaveButton().click();
+
+    await browser.sleep(5000);
+
+    console.log('Asserting post creation');
+
+    PostService.getInstance().findByTitle(postTitle)
+        .then(snapshot => {
+
+            // One post shall be created
+            expect(snapshot.size).toEqual(1);
+
+            snapshot.forEach(doc => {
+
+                // Debug
+                console.log(doc.id);
+
+                const postUrl = slug(postTitle.toLowerCase());
+                expect(doc.data().url).toEqual(postUrl);
+
+                // Cleanup
+                PostService.getInstance().deleteById(doc.id);
+            });
+        })
+        .catch(err => {
+            console.error('Error getting documents', err);
+        });
+}

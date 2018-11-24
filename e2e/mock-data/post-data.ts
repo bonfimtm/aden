@@ -1,4 +1,4 @@
-export const postOne = {
+export const postAirbusDeal = {
     title: `Airbus lands record deal`,
     subtitle: `European aircraft manufacturer Airbus has landed a record deal for around 400 Airbus A320 jets in one of the industry's ` +
         `biggest by volume`,
@@ -17,7 +17,7 @@ export const postOne = {
         `this year.`
 };
 
-export const postTwo = {
+export const postZimbabweMilitary = {
     title: `A military coup is the nuclear option`,
     subtitle: `Zimbabwe's military seizes power but denies claims of a coup`,
     headline: `Zimbabwe’s military says it has seized power in a targeted assault on “criminals” around President Robert Mugabe who it ` +
@@ -60,7 +60,7 @@ export const postTwo = {
         He reportedly also wanted to patch up relations with international organisations like the World Bank and IMF.`
 };
 
-export const postThree = {
+export const postNuclearAttack = {
     title: `Which world leaders hold the power to launch a nuclear attack?`,
     subtitle: `Most countries that have access to nuclear weapons put the final decision to launch an attack in the hands of one ` +
         `individual`,
