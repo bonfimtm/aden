@@ -5,8 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class BrPipe implements PipeTransform {
 
-  transform(value: string, args?: any): any {
-    return value.replace(/\\n/g, '<br>');
+  transform(value: string, _?: any): any {
+    if (value) {
+      return value.replace(/\\n/g, '<br>');
+    } else {
+      return value;
+    }
   }
 
 }
