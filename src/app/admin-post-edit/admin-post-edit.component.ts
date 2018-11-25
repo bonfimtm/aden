@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Post } from '../app-model';
 import { PostService } from '../services/post.service';
-import { AlertService } from '../services/alert.service';
+import { ToasterService } from '../services/toaster.service';
 
 @Component({
   selector: 'app-admin-post-edit',
@@ -19,7 +19,7 @@ export class AdminPostEditComponent implements OnInit, OnDestroy {
   public saving = false;
   public deleting = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private postService: PostService, private alert: AlertService) {
+  constructor(private route: ActivatedRoute, private router: Router, private postService: PostService, private toaster: ToasterService) {
     this.subscription = this.route.params.subscribe(params => {
       const id = params['id'];
       if (id) {
@@ -55,12 +55,12 @@ export class AdminPostEditComponent implements OnInit, OnDestroy {
       .then(_ => {
         console.log('Post updated');
         this.saving = false;
-        this.alert.success('Post updated 💃🏻');
+        this.toaster.success('Post updated 💃🏻');
       })
       .catch(error => {
         console.error('Error updating post: ', error);
         this.saving = false;
-        this.alert.error('Something went wrong 😧');
+        this.toaster.error('Something went wrong 😧');
       });
   }
 
@@ -75,13 +75,13 @@ export class AdminPostEditComponent implements OnInit, OnDestroy {
       .then(success => {
         console.log('Post deleted: ', success);
         this.deleting = false;
-        this.alert.info('Post deleted 👍🏻');
+        this.toaster.info('Post deleted 👍🏻');
         this.router.navigate(['admin/posts']);
       })
       .catch(error => {
         console.error('Error deleting post: ', error);
         this.deleting = false;
-        this.alert.error('Something went wrong 😩');
+        this.toaster.error('Something went wrong 😩');
       });
   }
 

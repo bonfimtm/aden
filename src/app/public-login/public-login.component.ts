@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../services/auth.service';
-import { AlertService } from '../services/alert.service';
+import { ToasterService } from '../services/toaster.service';
 
 @Component({
   selector: 'app-public-login',
@@ -16,7 +16,7 @@ export class PublicLoginComponent implements OnInit {
   password: string;
   buttonSignInIsLoading = false;
 
-  constructor(private auth: AuthService, private router: Router, private alert: AlertService) {
+  constructor(private auth: AuthService, private router: Router, private toaster: ToasterService) {
   }
 
   ngOnInit() {
@@ -39,7 +39,7 @@ export class PublicLoginComponent implements OnInit {
       .catch(error => {
         this.buttonSignInIsLoading = false;
         console.log('Error when logging in', error);
-        this.alert.error('😢');
+        this.toaster.error('Wrong email address or password 🤔');
       });
   }
 

@@ -22,6 +22,7 @@ import { PublicPostViewComponent } from './public-post-view/public-post-view.com
 import { AlertService } from './services/alert.service';
 import { AuthService } from './services/auth.service';
 import { PostService } from './services/post.service';
+import { ToasterService } from './services/toaster.service';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { PostService } from './services/post.service';
     AuthService,
     PostService,
     AlertService,
+    ToasterService,
   ],
   bootstrap: [AppComponent],
 })

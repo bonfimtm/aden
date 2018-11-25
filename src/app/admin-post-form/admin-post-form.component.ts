@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import { Post } from '../app-model';
 import { PostService } from '../services/post.service';
-import { AlertService } from '../services/alert.service';
+import { ToasterService } from '../services/toaster.service';
 
 @Component({
   selector: 'app-admin-post-form',
@@ -15,7 +15,7 @@ export class AdminPostFormComponent implements OnInit, OnDestroy {
   public post: Post;
   public saving = false;
 
-  constructor(private postService: PostService, private alert: AlertService) {
+  constructor(private postService: PostService, private toaster: ToasterService) {
     this.prepareCreate();
   }
 
@@ -39,12 +39,12 @@ export class AdminPostFormComponent implements OnInit, OnDestroy {
         console.log('Post written with ID: ', docRef.id, docRef);
         this.saving = false;
         this.prepareCreate();
-        this.alert.info('Post created 🕺');
+        this.toaster.info('Post created 🕺');
       })
       .catch(error => {
         console.error('Error adding post: ', error);
         this.saving = false;
-        this.alert.error('Something went wrong ☹️');
+        this.toaster.error('Something went wrong ☹️');
       });
   }
 
